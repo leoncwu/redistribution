@@ -1,0 +1,639 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C++ Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 18.0.2.199 Build 20180210
+
+Compiler options: -o redistricting -O2 -qopenmp -axCORE-AVX512,MIC-AVX512 -qopt-report-phase=vec -qopt-report=3
+
+Begin optimization report for: main()
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_uninitialized.h(74,8) inlined into redistricting.cxx(510,31)
+   remark #15553: loop was not vectorized: number of iterations (3) is insufficient for vectorization
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 13 
+   remark #15477: vector cost: 7.750 
+   remark #15478: estimated potential speedup: 0.770 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_uninitialized.h(74,8) inlined into redistricting.cxx(532,35)
+   remark #15423: loop was not vectorized: has only one iteration
+LOOP END
+===========================================================================
+
+Begin optimization report for: Districting::operator=(Districting *, Districting &&)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_construct.h(102,4) inlined into redistricting.cxx(159,7)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+LOOP END
+===========================================================================
+
+Begin optimization report for: std::vector<District, std::allocator<District>>::~vector(std::vector<District, std::allocator<District>> *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_construct.h(102,4) inlined into /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(427,9)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed ANTI dependence between __first->voter_district->_M_start (160:9) and call:operator delete(void *) (110:9)
+LOOP END
+===========================================================================
+
+Begin optimization report for: Districting::~Districting(Districting *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_construct.h(102,4) inlined into redistricting.cxx(159,7)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+LOOP END
+===========================================================================
+
+Begin optimization report for: Population::print(std::__cxx11::string *, Population *)
+
+    Report from: Vector optimizations [vec]
+
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at redistricting.cxx(476,18)
+   remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/basic_string.h(5456,12) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: Population::lean(Population *)
+
+    Report from: Vector optimizations [vec]
+
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at redistricting.cxx(272,18) inlined into redistricting.cxx(288,5)
+   remark #15523: loop was not vectorized: loop control variable U34_V.U34_V was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+===========================================================================
+
+Begin optimization report for: District::lean(District *)
+
+    Report from: Vector optimizations [vec]
+
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at redistricting.cxx(127,18) inlined into redistricting.cxx(143,5)
+   remark #15523: loop was not vectorized: loop control variable U13_V.U13_V was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+===========================================================================
+
+Begin optimization report for: std::vector<Voter, std::allocator<Voter>>::vector(std::vector<Voter, std::allocator<Voter>> *, std::vector<Voter, std::allocator<Voter>>::size_type, const std::vector<Voter, std::allocator<Voter>>::value_type &, const std::vector<Voter, std::allocator<Voter>>::allocator_type &)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_uninitialized.h(201,8) inlined into /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(295,9)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between __cur->ID (75:42) and __value->ID (75:42)
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_uninitialized.h(201,8) inlined into /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(295,9)
+<Remainder>
+LOOP END
+===========================================================================
+
+Begin optimization report for: District::print(std::__cxx11::string *, District *)
+
+    Report from: Vector optimizations [vec]
+
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at redistricting.cxx(151,18)
+   remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/basic_string.h(5456,12) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: Population::sub(Population *, Population *, int, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_uninitialized.h(518,8) inlined into redistricting.cxx(319,47)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 1 
+   remark #15477: vector cost: 0.500 
+   remark #15478: estimated potential speedup: 1.940 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at redistricting.cxx(321,5)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(804,4) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: Districting::lean(Districting *)
+
+    Report from: Vector optimizations [vec]
+
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at redistricting.cxx(177,18) inlined into redistricting.cxx(193,5)
+   remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ redistricting.cxx(112,7) ]
+
+   LOOP BEGIN at redistricting.cxx(127,18) inlined into redistricting.cxx(193,5)
+      remark #15523: loop was not vectorized: loop control variable U13_V.U13_V was found, but loop iteration count cannot be computed before executing the loop
+   LOOP END
+
+   LOOP BEGIN at redistricting.cxx(127,18) inlined into redistricting.cxx(193,5)
+      remark #15523: loop was not vectorized: loop control variable U13_V.U13_V was found, but loop iteration count cannot be computed before executing the loop
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: std::vector<Voter, std::allocator<Voter>>::vector(std::vector<Voter, std::allocator<Voter>> *, const std::vector<Voter, std::allocator<Voter>> &)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_uninitialized.h(74,23) inlined into /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(325,4)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between __cur->ID (75:42) and __first.__first->ID (75:42)
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_uninitialized.h(74,23) inlined into /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(325,4)
+<Remainder>
+LOOP END
+===========================================================================
+
+Begin optimization report for: std::vector<int, std::allocator<int>>::vector(std::vector<int, std::allocator<int>> *, std::vector<int, std::allocator<int>>::size_type, const std::vector<int, std::allocator<int>>::value_type &, const std::vector<int, std::allocator<int>>::allocator_type &)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7) inlined into /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(295,9)
+<Peeled loop for vectorization>
+   remark #15335: peel loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7) inlined into /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(295,9)
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 3 
+   remark #15477: vector cost: 0.250 
+   remark #15478: estimated potential speedup: 9.370 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7) inlined into /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(295,9)
+<Remainder loop for vectorization>
+   remark #15335: remainder loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+LOOP END
+===========================================================================
+
+Begin optimization report for: std::vector<int, std::allocator<int>>::vector(std::vector<int, std::allocator<int>> *, std::vector<int, std::allocator<int>>::size_type, const std::vector<int, std::allocator<int>>::value_type &, const std::vector<int, std::allocator<int>>::allocator_type &) [skylake_avx512]
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7) inlined into /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(295,9)
+<Peeled loop for vectorization>
+   remark #15335: peel loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7) inlined into /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(295,9)
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15321: Compiler has chosen to target XMM/YMM vector. Try using -qopt-zmm-usage=high to override
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 3 
+   remark #15477: vector cost: 0.430 
+   remark #15478: estimated potential speedup: 5.140 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7) inlined into /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(295,9)
+<Remainder loop for vectorization>
+   remark #15335: remainder loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+LOOP END
+===========================================================================
+
+Begin optimization report for: std::vector<int, std::allocator<int>>::vector(std::vector<int, std::allocator<int>> *, std::vector<int, std::allocator<int>>::size_type, const std::vector<int, std::allocator<int>>::value_type &, const std::vector<int, std::allocator<int>>::allocator_type &) [knl]
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7) inlined into /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(295,9)
+<Peeled loop for vectorization>
+   remark #15301: PEEL LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7) inlined into /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(295,9)
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 3 
+   remark #15477: vector cost: 0.250 
+   remark #15478: estimated potential speedup: 9.370 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7) inlined into /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(295,9)
+<Remainder loop for vectorization>
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+===========================================================================
+
+Begin optimization report for: std::vector<int, std::allocator<int>>::vector(std::vector<int, std::allocator<int>> *, std::vector<int, std::allocator<int>>::size_type, const std::vector<int, std::allocator<int>>::value_type &, const std::vector<int, std::allocator<int>>::allocator_type &) [generic]
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7) inlined into /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(295,9)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7) inlined into /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(295,9)
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 3 
+   remark #15477: vector cost: 1.000 
+   remark #15478: estimated potential speedup: 2.770 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7) inlined into /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(295,9)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: Population::Population(Population *, int, int, bool)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_uninitialized.h(518,8) inlined into redistricting.cxx(236,32)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 1 
+   remark #15477: vector cost: 0.500 
+   remark #15478: estimated potential speedup: 1.940 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at redistricting.cxx(237,5)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(804,4) ]
+LOOP END
+
+LOOP BEGIN at redistricting.cxx(240,44)
+   remark #15523: loop was not vectorized: loop control variable id was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at redistricting.cxx(262,7) inlined into redistricting.cxx(244,7)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(804,4) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: Population::minority_rules(Districting *, Population *, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at redistricting.cxx(417,35)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(804,4) ]
+LOOP END
+
+LOOP BEGIN at redistricting.cxx(431,11)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(804,4) ]
+LOOP END
+
+LOOP BEGIN at redistricting.cxx(444,5)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(804,4) ]
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_construct.h(102,4) inlined into redistricting.cxx(464,9)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_construct.h(102,4) inlined into redistricting.cxx(466,9)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at redistricting.cxx(401,45)
+   remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ redistricting.cxx(405,25) ]
+
+   LOOP BEGIN at redistricting.cxx(402,49)
+      remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ redistricting.cxx(405,25) ]
+   LOOP END
+LOOP END
+
+LOOP BEGIN at redistricting.cxx(420,5)
+   remark #15532: loop was not vectorized: compile time constraints prevent loop optimization. Consider using -O3.
+
+   LOOP BEGIN at redistricting.cxx(425,45)
+      remark #15532: loop was not vectorized: compile time constraints prevent loop optimization. Consider using -O3.
+   LOOP END
+LOOP END
+
+LOOP BEGIN at redistricting.cxx(460,35)
+   remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ redistricting.cxx(466,25) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: Population::whether_minor_win_between(Population *, int, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at redistricting.cxx(300,5)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(804,4) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: Districting::extend_last_district(Districting *, Districting *, Voter *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_uninitialized.h(74,23) inlined into redistricting.cxx(203,37)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between __cur->ID (75:42) and __first.__first->ID (75:42)
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_uninitialized.h(74,23) inlined into redistricting.cxx(203,37)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_construct.h(102,4) inlined into redistricting.cxx(204,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+LOOP END
+===========================================================================
+
+Begin optimization report for: std::vector<District, std::allocator<District>>::vector(std::vector<District, std::allocator<District>> *, const std::vector<District, std::allocator<District>> &)
+
+    Report from: Vector optimizations [vec]
+
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_uninitialized.h(74,23) inlined into /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_vector.h(325,4)
+   remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ redistricting.cxx(112,7) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: Districting::extend_with_new_district(Districting *, Districting *, Voter *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_uninitialized.h(74,23) inlined into redistricting.cxx(198,19)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between __cur->major (112:7) and __first.__first->major (112:7)
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_construct.h(102,4) inlined into redistricting.cxx(198,19)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_construct.h(102,4) inlined into redistricting.cxx(199,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+LOOP END
+===========================================================================
+
+Begin optimization report for: std::_Destroy_aux<false>::__destroy<std::_Vector_base<District, std::allocator<District>>::pointer>(std::_Vector_base<District, std::allocator<District>>::pointer, std::_Vector_base<District, std::allocator<District>>::pointer)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_construct.h(102,4)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed ANTI dependence between __first->voter_district->_M_start (160:9) and call:operator delete(void *) (110:9)
+LOOP END
+===========================================================================
+
+Begin optimization report for: Population::majority(Population *)
+
+    Report from: Vector optimizations [vec]
+
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at redistricting.cxx(272,18)
+   remark #15523: loop was not vectorized: loop control variable U34_V.U34_V was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+===========================================================================
+
+Begin optimization report for: Districting::print(std::__cxx11::string *, Districting *)
+
+    Report from: Vector optimizations [vec]
+
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at redistricting.cxx(208,44)
+   remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/basic_string.h(5456,12) ]
+
+   LOOP BEGIN at redistricting.cxx(151,18) inlined into redistricting.cxx(209,81)
+      remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/basic_string.h(5456,12) ]
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: Population::Population(Population *, std::__cxx11::string *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_uninitialized.h(518,8) inlined into redistricting.cxx(227,48)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 1 
+   remark #15477: vector cost: 0.500 
+   remark #15478: estimated potential speedup: 1.940 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_tree.h(1833,7) inlined into redistricting.cxx(226,22)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at redistricting.cxx(228,42)
+   remark #15532: loop was not vectorized: compile time constraints prevent loop optimization. Consider using -O3.
+
+   LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_tree.h(1653,7) inlined into redistricting.cxx(229,43)
+      remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_tree.h(1636,7) inlined into redistricting.cxx(230,5)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: std::map<char, int, std::less<char>, std::allocator<std::pair<const char, int>>>::~map(std::map<char, int, std::less<char>, std::allocator<std::pair<const char, int>>> *)
+
+    Report from: Vector optimizations [vec]
+
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_tree.h(1636,7) inlined into /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_map.h(97,11)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: std::_Rb_tree<std::map<char, int, std::less<char>, std::allocator<std::pair<const char, int>>>::key_type, std::map<char, int, std::less<char>, std::allocator<std::pair<const char, int>>>::value_type, std::_Select1st<std::map<char, int, std::less<char>, std::allocator<std::pair<const char, int>>>::value_type>, std::map<char, int, std::less<char>, std::allocator<std::pair<const char, int>>>::key_compare, std::map<char, int, std::less<char>, std::allocator<std::pair<const char, int>>>::_Pair_alloc_type>::_M_erase(std::_Rb_tree<std::map<char, int, std::less<char>, std::allocator<std::pair<const char, int>>>::key_type, std::map<char, int, std::less<char>, std::allocator<std::pair<const char, int>>>::value_type, std::_Select1st<std::map<char, int, std::less<char>, std::allocator<std::pair<const char, int>>>::value_type>, std::map<char, int, std::less<char>, std::allocator<std::pair<const char, int>>>::key_compare, std::map<char, int, std::less<char>, std::allocator<std::pair<const char, int>>>::_Pair_alloc_type> *, std::_Rb_tree<std::map<char, int, std::less<char>, std::allocator<std::pair<const char, int>>>::key_type, std::map<char, int, std::less<char>, std::allocator<std::pair<const char, int>>>::value_type, std::_Select1st<std::map<char, int, std::less<char>, std::allocator<std::pair<const char, int>>>::value_type>, std::map<char, int, std::less<char>, std::allocator<std::pair<const char, int>>>::key_compare, std::map<char, int, std::less<char>, std::allocator<std::pair<const char, int>>>::_Pair_alloc_type>::_Link_type)
+
+    Report from: Vector optimizations [vec]
+
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_tree.h(1636,7)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: std::__fill_n_a<std::_Vector_base<int, std::allocator<int>>::pointer, std::vector<int, std::allocator<int>>::size_type, std::vector<int, std::allocator<int>>::value_type>(std::_Vector_base<int, std::allocator<int>>::pointer, std::vector<int, std::allocator<int>>::size_type, const std::vector<int, std::allocator<int>>::value_type &)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7)
+<Peeled loop for vectorization>
+   remark #15335: peel loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7)
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 3 
+   remark #15477: vector cost: 0.250 
+   remark #15478: estimated potential speedup: 9.370 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7)
+<Remainder loop for vectorization>
+   remark #15335: remainder loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+LOOP END
+===========================================================================
+
+Begin optimization report for: std::__fill_n_a<std::_Vector_base<int, std::allocator<int>>::pointer, std::vector<int, std::allocator<int>>::size_type, std::vector<int, std::allocator<int>>::value_type>(std::_Vector_base<int, std::allocator<int>>::pointer, std::vector<int, std::allocator<int>>::size_type, const std::vector<int, std::allocator<int>>::value_type &) [skylake_avx512]
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7)
+<Peeled loop for vectorization>
+   remark #15335: peel loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7)
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15321: Compiler has chosen to target XMM/YMM vector. Try using -qopt-zmm-usage=high to override
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 3 
+   remark #15477: vector cost: 0.430 
+   remark #15478: estimated potential speedup: 5.140 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7)
+<Remainder loop for vectorization>
+   remark #15335: remainder loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+LOOP END
+===========================================================================
+
+Begin optimization report for: std::__fill_n_a<std::_Vector_base<int, std::allocator<int>>::pointer, std::vector<int, std::allocator<int>>::size_type, std::vector<int, std::allocator<int>>::value_type>(std::_Vector_base<int, std::allocator<int>>::pointer, std::vector<int, std::allocator<int>>::size_type, const std::vector<int, std::allocator<int>>::value_type &) [knl]
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7)
+<Peeled loop for vectorization>
+   remark #15301: PEEL LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7)
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 3 
+   remark #15477: vector cost: 0.250 
+   remark #15478: estimated potential speedup: 9.370 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7)
+<Remainder loop for vectorization>
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+===========================================================================
+
+Begin optimization report for: std::__fill_n_a<std::_Vector_base<int, std::allocator<int>>::pointer, std::vector<int, std::allocator<int>>::size_type, std::vector<int, std::allocator<int>>::value_type>(std::_Vector_base<int, std::allocator<int>>::pointer, std::vector<int, std::allocator<int>>::size_type, const std::vector<int, std::allocator<int>>::value_type &) [generic]
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7)
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 3 
+   remark #15477: vector cost: 1.000 
+   remark #15478: estimated potential speedup: 2.770 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at /opt/apps/gcc/6.3.0/include/c++/6.3.0/bits/stl_algobase.h(752,7)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
